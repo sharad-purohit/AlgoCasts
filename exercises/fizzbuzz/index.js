@@ -12,6 +12,23 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function isDivisibleBy(num, n) {
+  return num % n === 0;
+}
+function fizzBuzz(n) {
+  for(let i = 1; i <= n; i++) {
+    const divisibleBy3 = isDivisibleBy(i, 3);
+    const devisibleBy5 = isDivisibleBy(i, 5);
+    if (divisibleBy3 && devisibleBy5) {
+      console.log('fizzbuzz');
+    } else if (divisibleBy3) {
+      console.log('fizz');
+    } else if (devisibleBy5) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
+}
 
 module.exports = fizzBuzz;

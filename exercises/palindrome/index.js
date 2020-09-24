@@ -6,7 +6,30 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
-
-function palindrome(str) {}
+// const reverse = require('../reversestring/index.js');
+function palindrome(str) {
+  if(!str) {
+    return false;
+  }
+  return str.split('').every((char, index) => {
+      return char === str[str.length - index - 1];
+  });
+}
 
 module.exports = palindrome;
+
+// function palindrome(str) {
+//   if(!str) {
+//     return false;
+//   }
+//   return str.split('').every((char, index) => {
+//       return char === str.charAt(str.length - index - 1);
+//   });
+// }
+
+// function palindrome(str) {
+//   if(!str) {
+//     return false;
+//   }
+//   return str === reverse(str);
+// }
